@@ -10,5 +10,6 @@
     <modules>
         <module>eureka</module>
     </modules>
+    <packaging>pom</packaging>
 
 </project>
