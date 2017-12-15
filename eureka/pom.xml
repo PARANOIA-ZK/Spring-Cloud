@@ -13,6 +13,7 @@
         <module>eureka-client</module>
         <module>eureka-sonsumer</module>
         <module>consul-client</module>
+        <module>eureka-sonsumer-ribbon</module>
     </modules>
 
     <packaging>pom</packaging>

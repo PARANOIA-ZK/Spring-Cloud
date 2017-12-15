@@ -26,7 +26,6 @@ public class DcController {
      * 这个服务实例的基本信息存储在ServiceInstance中，然后通过这些对象中的信息拼接出访问/dc接口的详细地址，
      * 最后再利用RestTemplate对象实现对服务提供者接口的调用。
      *
-     *
      * eureka-server、eureka-client、eureka-consumer都启动起来，
      * 然后访问http://localhost:2101/consumer ，
      * 来跟踪观察eureka-consumer服务是如何消费eureka-client服务的/dc接口的。
