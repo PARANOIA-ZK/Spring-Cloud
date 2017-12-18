@@ -13,6 +13,7 @@
 
     <modules>
         <module>eureka-consumer-ribbon-hystrix</module>
+        <module>hystrix-dashboard</module>
     </modules>
     <packaging>pom</packaging>
 
