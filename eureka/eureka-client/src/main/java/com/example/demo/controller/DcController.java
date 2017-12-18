@@ -16,7 +16,9 @@ public class DcController {
     DiscoveryClient discoveryClient;
 
     @GetMapping("/dc")
-    public String dc() {
+    public String dc() throws InterruptedException{
+        //注意下面的一行代码，是为了测试服务降级添加的
+        Thread.sleep(50000L);
         String services = "Services: " + discoveryClient.getServices();
         System.out.println(services);
         return services;
