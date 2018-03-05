@@ -33,4 +33,11 @@ public class DcController {
         System.out.println(services);
         return services;
     }
+
+    @GetMapping("/ex")
+    public void ex() {
+        //finish 网关可拦截
+        throw new RuntimeException("抛出异常，测试网关拦截");
+
+    }
 }

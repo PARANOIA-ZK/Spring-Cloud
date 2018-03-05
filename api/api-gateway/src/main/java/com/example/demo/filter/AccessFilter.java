@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author PARANOIA_ZK
@@ -50,22 +49,22 @@ public class AccessFilter  extends ZuulFilter{
 
         log.info("send {} request to {}", request.getMethod(), request.getRequestURL().toString());
 
-        //Object accessToken = request.getParameter("accessToken");
-        //if(accessToken == null) {
-        //    log.warn("access token is empty");
-        //    ctx.setSendZuulResponse(false);
-        //    ctx.setResponseStatusCode(401);
-        //    return null;
-        //}
-        //log.info("access token ok");
+        Object accessToken = request.getParameter("accessToken");
+        if(accessToken == null) {
+            log.warn("access token is empty");
+            ctx.setSendZuulResponse(false);
+            ctx.setResponseStatusCode(401);
+            return null;
+        }
+        log.info("access token ok");
 
         //测试异常
-        try {
-            doSomething();
-        } catch (Exception e) {
-           ctx.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-           ctx.set("error.exception",e);
-        }
+        //try {
+        //    doSomething();
+        //} catch (Exception e) {
+        //   ctx.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        //   ctx.set("error.exception",e);
+        //}
         return null;
     }
 
